@@ -20,9 +20,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: 
-        npm i
-        pm2 stop index.js
-        pm2 start index.js
-        pm2 save
-        sudo service nginx restart
+    - run: npm i
+    - run: pm2 stop index.js
+    - run: pm2 start index.js
+    - run: pm2 save
+    - run: sudo service nginx restart
